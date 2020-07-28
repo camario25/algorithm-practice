@@ -1,3 +1,4 @@
+const { performance } = require("perf_hooks");
 const testArr = [2, 5, 7, 1, 18, 9, 8, 10, 11, 13, 6, 3];
 
 const testSortedArr1 = [1, 2, 3, 8];
@@ -35,8 +36,9 @@ function mergeSortUnify(arr1, arr2) {
 }
 
 console.log(mergeSortUnify(testSortedArr1, testSortedArr2));
-const start = new Date().getTime();
+const start = performance.now();
 const result = mergeSort(testArr);
-const end = new Date().getTime();
+const end = performance.now();
 const duration = end - start;
-console.log(result, duration + "msec");
+console.log(result);
+console.log(`Duration: ${duration} msec`);
