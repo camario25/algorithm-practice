@@ -5,7 +5,6 @@ const testSortedArr2 = [0, 4, 5, 7];
 
 function mergeSort(unsortedArr) {
   if (unsortedArr.length === 1) {
-    console.log(unsortedArr);
     return unsortedArr;
   } else {
     const half = Math.ceil(unsortedArr.length / 2);
@@ -36,4 +35,8 @@ function mergeSortUnify(arr1, arr2) {
 }
 
 console.log(mergeSortUnify(testSortedArr1, testSortedArr2));
-console.log(mergeSort(testArr));
+const start = new Date().getTime();
+const result = mergeSort(testArr);
+const end = new Date().getTime();
+const duration = end - start;
+console.log(result, duration + "msec");
